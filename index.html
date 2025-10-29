@@ -3,55 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eduardo Ramon - Desenvolvedor</title>
+    <title>Eduardo Ramon - Desenvolvedor & Designer</title>
     <style>
+        :root {
+            /* Paleta de Cores (Dark Mode) */
+            --bg-color: #121212;
+            --card-color: #1E1E1E;
+            --text-color: #E0E0E0;
+            --primary-color: #007BFF; /* Azul para links e destaques */
+            --border-color: #2D2D2D;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 40px;
-            background-color: #f6f8fa;
-            color: #24292e;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
         }
+
         .container {
-            max-width: 800px;
-            margin: auto;
+            max-width: 900px;
+            margin: 40px auto;
             padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        h1 {
-            color: #0366d6;
-        }
-        p {
-            font-size: 1.1em;
-        }
-        footer {
-            margin-top: 20px;
+
+        /* --- Cabeçalho (com a foto) --- */
+        header {
             text-align: center;
-            font-size: 0.9em;
-            color: #586069;
+            margin-bottom: 60px;
         }
+
+        header img.profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Deixa a foto redonda */
+            border: 4px solid var(--primary-color);
+            object-fit: cover; /* Garante que a foto não distorça */
+            margin-bottom: 20px;
+            background-color: var(--card-color); /* Cor de fundo enquanto a foto não carrega */
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        /* --- Seções (Sobre, Projetos, Contato) --- */
+        .section {
+            background-color: var(--card-color);
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            font-size: 2em;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        /* --- Grade de Projetos --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        /* --- Contato --- */
+        .contact-link {
+            display: inline-block;
+            font-size: 1.1em;
+            text-decoration: none;
+            color: var(--primary-color);
+            background-color: var(--bg-color);
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+
+        /* --- Rodapé --- */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-color);
+            opacity: 0.6;
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Olá, eu sou Eduardo Ramon</h1>
-        <p>Sou desenvolvedor de aplicativos e designer digital, focado na criação de soluções inovadoras.</p>
-        
-        <h2>Sobre mim</h2>
-        <p>
-            Tenho experiência no desenvolvimento de aplicações multiplataforma com Flutter e na integração com serviços de backend como o Firebase. 
-            Sou o criador de projetos como o "Eva Assistente Financeira" e o "Auto Respostas".
-        </p>
 
-        <h2>Contato</h2>
-        <p>Você pode me encontrar no GitHub ou entrar em contato pelo e-mail: [seu-email@gmail.com]</p>
+    <div class="container">
+
+        <header>
+            <img src="profile.jpg" alt="Foto de perfil de Eduardo Ramon" class="profile-pic">
+            
+            <h1>Eduardo Ramon</h1>
+            <p>Desenvolvedor de Aplicativos (Flutter) & Designer Digital</p>
+        </header>
+
+        <main>
+            <section id="sobre" class="section">
+                <h2>Sobre Mim</h2>
+                <p>
+                    Sou um profissional de tecnologia apaixonado por criar soluções que facilitam a vida das pessoas. Com foco em desenvolvimento mobile usando Flutter e Firebase, eu transformo ideias em aplicativos funcionais e elegantes.
+                </p>
+                <p>
+                    Além do desenvolvimento, atuo como designer digital, criando identidades visuais e materiais de marketing para a Ed Company.
+                </p>
+            </section>
+
+            <section id="projetos" class="section">
+                <h2>Meus Projetos Principais</h2>
+                <div class="project-grid">
+                    
+                    <div class="project-card">
+                        <h3>Eva Assistente Financeira</h3>
+                        <p>Um aplicativo de finanças pessoais desenvolvido em Flutter, ajudando usuários a controlar seus gastos e assinaturas.</p>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>Auto Respostas (Bot WA)</h3>
+                        <p>Uma aplicação Android que automatiza respostas no WhatsApp, otimizando a comunicação para vendas e marketing.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Ed Company Design</h3>
+                        <p>Criação de logos, flyers e identidades visuais profissionais para negócios locais e digitais.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="contato" class="section">
+                <h2>Contato</h2>
+                <p>Estou disponível para novos projetos e parcerias. Vamos conversar?</p>
+                <a href="mailto:edcompanyadm@gmail.com" class="contact-link">
+                    Enviar E-mail
+                </a>
+            </section>
+        </main>
 
         <footer>
-            © 2025 Ed Company
+            <p>© 2025 Eduardo Ramon | Ed Company</p>
         </footer>
+
     </div>
+
 </body>
 </html>
